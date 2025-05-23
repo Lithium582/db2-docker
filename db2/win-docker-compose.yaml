@@ -25,7 +25,7 @@ services:
       # - ETCD_PASSWORD= Idem DB2Inst password
     volumes:
       # Colocar su nombre de usuario
-      - C:/Users/<user name>/Docker:/database icr.io/db2_community/db2
-      - ../backups:/home/db2inst1/backups
+      - C:/Users/Admin/Docker:/database icr.io/db2_community/db2
+      - ../backups:/mnt/db2inst1/backups
     ports:
       - "50000:50000"
