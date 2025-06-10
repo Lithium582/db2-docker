@@ -1,0 +1,1 @@
+docker exec -ti db2 bash -c "su db2inst1"

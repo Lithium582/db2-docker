@@ -1,0 +1,1 @@
+docker compose -f ./db2/win-docker-compose.yaml up -d
