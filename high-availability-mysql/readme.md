@@ -23,7 +23,8 @@ Nota: cambiar en este comando los parámetros SOURCE_LOG_FILE y SOURCE_LOG_POS
 Verificar que la réplica está funcionando:
 
 ```START REPLICA;
-SHOW REPLICA STATUS\G;```
+SHOW REPLICA STATUS\G;
+```
 
 Debería verse esto:
 
