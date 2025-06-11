@@ -29,6 +29,7 @@ SHOW REPLICA STATUS\G;
 Debería verse esto:
 
 Replica_IO_Running: Yes
+
 Replica_SQL_Running: Yes
 
 ---
@@ -47,6 +48,7 @@ Después, hacer un insert:
 `INSERT INTO demo.test2 (mensaje) VALUES ('¡Hola desde el primario!');`
 
 En replica, verificar:
+
 `SELECT * FROM demo.test2;`
 
 
