@@ -16,7 +16,6 @@ services:
       - "3307:3306"
     volumes:
       - mysql_primary_data:/var/lib/mysql
-      # - ./primary.cnf:/etc/mysql/conf.d/my.cnf
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
   mysql_replica:
@@ -36,8 +35,6 @@ services:
       - "3308:3306"
     volumes:
       - mysql_replica_data:/var/lib/mysql
-      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      # - ./replica.cnf:/etc/mysql/conf.d/my.cnf
     
 volumes:
   mysql_primary_data:

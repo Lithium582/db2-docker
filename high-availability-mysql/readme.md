@@ -15,7 +15,7 @@ CHANGE REPLICATION SOURCE TO
   SOURCE_HOST='mysql_primary',
   SOURCE_USER='replica_user',
   SOURCE_PASSWORD='replica_pass',
-  SOURCE_LOG_FILE='mysql-bin.000003',
+  SOURCE_LOG_FILE='mysql-bin.000004',
   SOURCE_LOG_POS=158;
 ```
 
@@ -23,7 +23,8 @@ Nota: cambiar en este comando los parámetros SOURCE_LOG_FILE y SOURCE_LOG_POS
 
 Verificar que la réplica está funcionando:
 
-```START REPLICA;
+```
+START REPLICA;
 SHOW REPLICA STATUS\G;
 ```
 
@@ -46,7 +47,7 @@ CREATE TABLE IF NOT EXISTS demo.test2 (
 
 Después, hacer un insert:
 
-`INSERT INTO demo.test2 (mensaje) VALUES ('¡Hola desde el primario!');`
+`INSERT INTO demo.test2 (mensaje) VALUES ('¡Hola desde el primario ESTE ES REAL!');`
 
 En replica, verificar:
 
