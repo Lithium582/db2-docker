@@ -1,4 +1,5 @@
-**Aplicación de prueba para una demo de Master-Slave en MySQL**
+# Aplicación de prueba para una demo de Master-Slave en MySQL
+
 - Primero debe ejecutarse el archivo "runContainer" para ejecutar el contenedor
 - Luego, el archivo "execDockerBashPrimary" para entrar al contenedor primario
 - Una vez dentro, ejecutar:
