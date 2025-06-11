@@ -1,0 +1,44 @@
+services:
+  mysql_primary:
+    image: mysql:8.3.0
+    container_name: mysql_primary
+    command:
+      - --mysql-native-password=ON
+      - --log-error-verbosity=3
+      - --server-id=1
+      - --log-bin=mysql-bin
+      - --binlog_do_db=demo
+      - --binlog_format=row
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: demo
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_primary_data:/var/lib/mysql
+      # - ./primary.cnf:/etc/mysql/conf.d/my.cnf
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+
+  mysql_replica:
+    image: mysql:8.3.0
+    container_name: mysql_replica
+    command:
+      - --mysql-native-password=ON
+      - --log-error-verbosity=3
+      - --server-id=2
+      - --log-bin=mysql-bin
+      - --binlog_do_db=demo
+      - --binlog_format=row
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: demo
+    ports:
+      - "3308:3306"
+    volumes:
+      - mysql_replica_data:/var/lib/mysql
+      # - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      # - ./replica.cnf:/etc/mysql/conf.d/my.cnf
+    
+volumes:
+  mysql_primary_data:
+  mysql_replica_data:

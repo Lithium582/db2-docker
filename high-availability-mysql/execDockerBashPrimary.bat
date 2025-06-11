@@ -1,0 +1,1 @@
+docker exec -it mysql_primary mysql -uroot -prootpass
